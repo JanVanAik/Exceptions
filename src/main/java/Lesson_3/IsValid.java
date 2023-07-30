@@ -10,14 +10,13 @@ public class IsValid {
         if (userData.length == 6 && PhoneValid(userData[4]) && DateValid(userData[3]))
         {return true;} else { throw new RuntimeException("Неверное количество данных");}
     }
-
+//Валидатор телефона
     static boolean PhoneValid(String userPhone) {
-//        Pattern regex = Pattern.compile("\\(?\\b([0-9]{3})\\)?[-.•]?([0-9]{3})[-.•]?([0-9]{4})\\b");
         String PHONE_TEMPLATE = "8\\d{10}";
         if (userPhone.matches(PHONE_TEMPLATE)){return true;}
         else {throw new RuntimeException("Неверный телефон");}
     }
-
+//Валидатор даты
     static boolean DateValid(String userDate) {
          String Date_REGEX =
                 "^(?:(?:(?:0?[13578]|1[02])(\\/|-|\\.)31)\\1|" +
